@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220908 10:56:38.678" rpa="false" schemaversion="3">
+<suite id="s1" name="RobotAuto" source="C:\Code\meu.exe\RobotAuto.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Start Sikuli Process</arg>
+<arg>AND</arg>
+<arg>Ler imagens iniciais</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Start Sikuli Process" library="SikuliLibrary">
+<msg timestamp="20220908 10:56:40.096" level="INFO">Starting process:
+java -jar "C:\Users\Visual Software\AppData\Local\Programs\Python\Python310\lib\site-packages\SikuliLibrary\lib\SikuliLibrary.jar" 54739 C:\Code\meu.exe\results</msg>
+<msg timestamp="20220908 10:56:40.100" level="INFO">Start sikuli java process on port 54739</msg>
+<msg timestamp="20220908 10:56:42.614" level="INFO">Sikuli java process is started</msg>
+<status status="PASS" starttime="20220908 10:56:40.082" endtime="20220908 10:56:45.121"/>
+</kw>
+<kw name="Ler imagens iniciais">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${IMAGE}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220908 10:56:45.140" endtime="20220908 10:56:45.167"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:45.140" endtime="20220908 10:56:45.167"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:40.081" endtime="20220908 10:56:45.167"/>
+</kw>
+<test id="s1-t1" name="Cenário 01: Operações na Calculadora" line="18">
+<kw name="Dado estou no desktop do Windows">
+<kw name="Set Library Search Order" library="BuiltIn">
+<arg>SikuliLibrary</arg>
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<status status="PASS" starttime="20220908 10:56:45.169" endtime="20220908 10:56:45.169"/>
+</kw>
+<kw name="Press Combination" library="ImageHorizonLibrary">
+<arg>KEY.WIN</arg>
+<arg>Key.D</arg>
+<doc>Press given keyboard keys.</doc>
+<status status="PASS" starttime="20220908 10:56:45.169" endtime="20220908 10:56:45.280"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:45.168" endtime="20220908 10:56:45.280"/>
+</kw>
+<kw name="E abro o aplicativo da cálculadora">
+<kw name="Set Library Search Order" library="BuiltIn">
+<arg>SikuliLibrary</arg>
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<status status="PASS" starttime="20220908 10:56:45.282" endtime="20220908 10:56:45.282"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${CALCULATOR}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220908 10:56:45.282" endtime="20220908 10:56:46.864"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>btn_maxBlack.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220908 10:56:48.293" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1662645407368.png'/&gt;
+[log] CLICK on L[1850,15]@S(0) (567 msec)</msg>
+<status status="PASS" starttime="20220908 10:56:46.864" endtime="20220908 10:56:48.293"/>
+</kw>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>calc.png</arg>
+<arg>5</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20220908 10:56:51.014" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1662645410871.png'/&gt;</msg>
+<status status="PASS" starttime="20220908 10:56:48.293" endtime="20220908 10:56:51.014"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:45.281" endtime="20220908 10:56:51.014"/>
+</kw>
+<kw name="Quando realizo operações matemáticas">
+<kw name="Random Number" library="FakerLibrary">
+<var>${NUMERO1}</var>
+<arg>digits=1</arg>
+<doc>Generate a random integer according to the following rules:</doc>
+<msg timestamp="20220908 10:56:51.016" level="INFO">${NUMERO1} = 9</msg>
+<status status="PASS" starttime="20220908 10:56:51.015" endtime="20220908 10:56:51.016"/>
+</kw>
+<kw name="Random Number" library="FakerLibrary">
+<var>${NUMERO2}</var>
+<arg>digits=2</arg>
+<doc>Generate a random integer according to the following rules:</doc>
+<msg timestamp="20220908 10:56:51.016" level="INFO">${NUMERO2} = 33</msg>
+<status status="PASS" starttime="20220908 10:56:51.016" endtime="20220908 10:56:51.016"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>${NUMERO1}</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:51.135" level="INFO">Input Text:
+9
+[log]  TYPE "9"</msg>
+<status status="PASS" starttime="20220908 10:56:51.016" endtime="20220908 10:56:51.135"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>+</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:51.254" level="INFO">Input Text:
++
+[log]  TYPE "+"</msg>
+<status status="PASS" starttime="20220908 10:56:51.136" endtime="20220908 10:56:51.255"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>${NUMERO2}</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:51.417" level="INFO">Input Text:
+33
+[log]  TYPE "33"</msg>
+<status status="PASS" starttime="20220908 10:56:51.255" endtime="20220908 10:56:51.417"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>=</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:51.510" level="INFO">Input Text:
+=
+[log]  TYPE "="</msg>
+<status status="PASS" starttime="20220908 10:56:51.418" endtime="20220908 10:56:51.510"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>${NUMERO1}</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:51.601" level="INFO">Input Text:
+9
+[log]  TYPE "9"</msg>
+<status status="PASS" starttime="20220908 10:56:51.510" endtime="20220908 10:56:51.601"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>-</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:51.692" level="INFO">Input Text:
+-
+[log]  TYPE "-"</msg>
+<status status="PASS" starttime="20220908 10:56:51.602" endtime="20220908 10:56:51.692"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>${NUMERO2}</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:51.854" level="INFO">Input Text:
+33
+[log]  TYPE "33"</msg>
+<status status="PASS" starttime="20220908 10:56:51.693" endtime="20220908 10:56:51.854"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>=</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:51.944" level="INFO">Input Text:
+=
+[log]  TYPE "="</msg>
+<status status="PASS" starttime="20220908 10:56:51.854" endtime="20220908 10:56:51.944"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>${NUMERO1}</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:52.035" level="INFO">Input Text:
+9
+[log]  TYPE "9"</msg>
+<status status="PASS" starttime="20220908 10:56:51.945" endtime="20220908 10:56:52.035"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>*</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:52.152" level="INFO">Input Text:
+*
+[log]  TYPE "*"</msg>
+<status status="PASS" starttime="20220908 10:56:52.035" endtime="20220908 10:56:52.152"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>${NUMERO2}</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:52.311" level="INFO">Input Text:
+33
+[log]  TYPE "33"</msg>
+<status status="PASS" starttime="20220908 10:56:52.152" endtime="20220908 10:56:52.311"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>=</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:52.400" level="INFO">Input Text:
+=
+[log]  TYPE "="</msg>
+<status status="PASS" starttime="20220908 10:56:52.311" endtime="20220908 10:56:52.400"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>${NUMERO1}</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:52.490" level="INFO">Input Text:
+9
+[log]  TYPE "9"</msg>
+<status status="PASS" starttime="20220908 10:56:52.400" endtime="20220908 10:56:52.490"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>/</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:52.625" level="INFO">Input Text:
+/
+[log]  TYPE "/"</msg>
+<status status="PASS" starttime="20220908 10:56:52.490" endtime="20220908 10:56:52.626"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>${NUMERO2}</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:52.785" level="INFO">Input Text:
+33
+[log]  TYPE "33"</msg>
+<status status="PASS" starttime="20220908 10:56:52.626" endtime="20220908 10:56:52.785"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>=</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:52.876" level="INFO">Input Text:
+=
+[log]  TYPE "="</msg>
+<status status="PASS" starttime="20220908 10:56:52.785" endtime="20220908 10:56:52.876"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220908 10:56:53.878" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220908 10:56:52.876" endtime="20220908 10:56:53.878"/>
+</kw>
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220908 10:56:54.078" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1662645413966.png'/&gt;</msg>
+<status status="PASS" starttime="20220908 10:56:53.878" endtime="20220908 10:56:54.078"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:51.015" endtime="20220908 10:56:54.078"/>
+</kw>
+<kw name="Então finalizo o aplicativo">
+<kw name="Set Library Search Order" library="BuiltIn">
+<arg>SikuliLibrary</arg>
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<status status="PASS" starttime="20220908 10:56:54.079" endtime="20220908 10:56:54.080"/>
+</kw>
+<kw name="Press Combination" library="ImageHorizonLibrary">
+<arg>KEY.ALT</arg>
+<arg>Key.F4</arg>
+<doc>Press given keyboard keys.</doc>
+<status status="PASS" starttime="20220908 10:56:54.080" endtime="20220908 10:56:54.182"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:54.079" endtime="20220908 10:56:54.183"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:45.167" endtime="20220908 10:56:54.185"/>
+</test>
+<test id="s1-t2" name="Cenário 02: Textos no bloco de notas" line="24">
+<kw name="Dado estou no desktop do Windows">
+<kw name="Set Library Search Order" library="BuiltIn">
+<arg>SikuliLibrary</arg>
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<status status="PASS" starttime="20220908 10:56:54.202" endtime="20220908 10:56:54.202"/>
+</kw>
+<kw name="Press Combination" library="ImageHorizonLibrary">
+<arg>KEY.WIN</arg>
+<arg>Key.D</arg>
+<doc>Press given keyboard keys.</doc>
+<status status="PASS" starttime="20220908 10:56:54.202" endtime="20220908 10:56:54.303"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:54.201" endtime="20220908 10:56:54.303"/>
+</kw>
+<kw name="E abro o bloco de notas">
+<kw name="Set Library Search Order" library="BuiltIn">
+<arg>SikuliLibrary</arg>
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<status status="PASS" starttime="20220908 10:56:54.304" endtime="20220908 10:56:54.305"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${NOTEPAD}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220908 10:56:54.305" endtime="20220908 10:56:54.600"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>btn_maxBlue.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220908 10:56:55.898" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1662645414984.png'/&gt;
+[log] CLICK on L[1511,156]@S(0) (562 msec)</msg>
+<status status="PASS" starttime="20220908 10:56:54.600" endtime="20220908 10:56:55.898"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:54.304" endtime="20220908 10:56:55.898"/>
+</kw>
+<kw name="Quando realizo edições de textos">
+<kw name="Set Library Search Order" library="BuiltIn">
+<arg>SikuliLibrary</arg>
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<status status="PASS" starttime="20220908 10:56:55.901" endtime="20220908 10:56:55.901"/>
+</kw>
+<kw name="Name" library="FakerLibrary">
+<var>${NOME}</var>
+<doc>:example 'John Doe'</doc>
+<msg timestamp="20220908 10:56:55.902" level="INFO">${NOME} = Sra. Lara Costela</msg>
+<status status="PASS" starttime="20220908 10:56:55.901" endtime="20220908 10:56:55.902"/>
+</kw>
+<kw name="Cpf" library="FakerLibrary">
+<var>${CPF}</var>
+<msg timestamp="20220908 10:56:55.903" level="INFO">${CPF} = 539.718.206-03</msg>
+<status status="PASS" starttime="20220908 10:56:55.902" endtime="20220908 10:56:55.903"/>
+</kw>
+<kw name="Cnpj" library="FakerLibrary">
+<var>${CNPJ}</var>
+<msg timestamp="20220908 10:56:55.903" level="INFO">${CNPJ} = 58.329.407/0001-47</msg>
+<status status="PASS" starttime="20220908 10:56:55.903" endtime="20220908 10:56:55.904"/>
+</kw>
+<kw name="Street Name" library="FakerLibrary">
+<var>${RUA}</var>
+<doc>:example: 'Crist Parks'</doc>
+<msg timestamp="20220908 10:56:55.904" level="INFO">${RUA} = Vereda João Miguel Vieira</msg>
+<status status="PASS" starttime="20220908 10:56:55.904" endtime="20220908 10:56:55.904"/>
+</kw>
+<kw name="Bairro" library="FakerLibrary">
+<var>${BAIRRO}</var>
+<doc>Randomly returns a bairro (neighborhood) name.
+The names were taken from the city of Belo Horizonte - Minas Gerais
+:example: 'Serra'</doc>
+<msg timestamp="20220908 10:56:55.905" level="INFO">${BAIRRO} = Piratininga</msg>
+<status status="PASS" starttime="20220908 10:56:55.905" endtime="20220908 10:56:55.905"/>
+</kw>
+<kw name="Phone Number" library="FakerLibrary">
+<var>${TEL}</var>
+<msg timestamp="20220908 10:56:55.906" level="INFO">${TEL} = 0900 281 5990</msg>
+<status status="PASS" starttime="20220908 10:56:55.905" endtime="20220908 10:56:55.906"/>
+</kw>
+<kw name="Safe Email" library="FakerLibrary">
+<var>${EMAIL}</var>
+<msg timestamp="20220908 10:56:55.906" level="INFO">${EMAIL} = felipe99@example.org</msg>
+<status status="PASS" starttime="20220908 10:56:55.906" endtime="20220908 10:56:55.906"/>
+</kw>
+<kw name="License Plate" library="FakerLibrary">
+<var>${PLACA}</var>
+<doc>Generate a license plate.</doc>
+<msg timestamp="20220908 10:56:55.907" level="INFO">${PLACA} = TYZ-8R08</msg>
+<status status="PASS" starttime="20220908 10:56:55.906" endtime="20220908 10:56:55.907"/>
+</kw>
+<kw name="Safe Color Name" library="FakerLibrary">
+<var>${COR}</var>
+<doc>Generate a web-safe color name.</doc>
+<msg timestamp="20220908 10:56:55.907" level="INFO">${COR} = laranja</msg>
+<status status="PASS" starttime="20220908 10:56:55.907" endtime="20220908 10:56:55.907"/>
+</kw>
+<kw name="Catch Phrase" library="FakerLibrary">
+<var>${FRASE}</var>
+<doc>:example: 'a segurança de evoluir sem preocupação'</doc>
+<msg timestamp="20220908 10:56:55.908" level="INFO">${FRASE} = O prazer de ganhar com confiança</msg>
+<status status="PASS" starttime="20220908 10:56:55.907" endtime="20220908 10:56:55.908"/>
+</kw>
+<kw name="Job" library="FakerLibrary">
+<var>${JOB}</var>
+<msg timestamp="20220908 10:56:55.908" level="INFO">${JOB} = Designer gráfico</msg>
+<status status="PASS" starttime="20220908 10:56:55.908" endtime="20220908 10:56:55.908"/>
+</kw>
+<kw name="Press Combination" library="ImageHorizonLibrary">
+<arg>KEY.ALT</arg>
+<arg>Key.F</arg>
+<doc>Press given keyboard keys.</doc>
+<status status="PASS" starttime="20220908 10:56:55.909" endtime="20220908 10:56:56.012"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>DOWN</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:56.103" level="INFO">[log]  TYPE "#DOWN."</msg>
+<status status="PASS" starttime="20220908 10:56:56.012" endtime="20220908 10:56:56.103"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:56.194" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20220908 10:56:56.103" endtime="20220908 10:56:56.194"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${I}</var>
+<value>2</value>
+<iter>
+<var name="${I}">0</var>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>TAB</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:56.281" level="INFO">[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20220908 10:56:56.194" endtime="20220908 10:56:56.281"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:56.194" endtime="20220908 10:56:56.281"/>
+</iter>
+<iter>
+<var name="${I}">1</var>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>TAB</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:56.368" level="INFO">[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20220908 10:56:56.282" endtime="20220908 10:56:56.368"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:56.281" endtime="20220908 10:56:56.368"/>
+</iter>
+<status status="PASS" starttime="20220908 10:56:56.194" endtime="20220908 10:56:56.368"/>
+</for>
+<for flavor="IN RANGE">
+<var>${I}</var>
+<value>5</value>
+<iter>
+<var name="${I}">0</var>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>DOWN</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:56.458" level="INFO">[log]  TYPE "#DOWN."</msg>
+<status status="PASS" starttime="20220908 10:56:56.368" endtime="20220908 10:56:56.458"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:56.368" endtime="20220908 10:56:56.458"/>
+</iter>
+<iter>
+<var name="${I}">1</var>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>DOWN</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:57.548" level="INFO">[log]  TYPE "#DOWN."</msg>
+<status status="PASS" starttime="20220908 10:56:56.458" endtime="20220908 10:56:57.548"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:56.458" endtime="20220908 10:56:57.548"/>
+</iter>
+<iter>
+<var name="${I}">2</var>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>DOWN</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:57.636" level="INFO">[log]  TYPE "#DOWN."</msg>
+<status status="PASS" starttime="20220908 10:56:57.549" endtime="20220908 10:56:57.636"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:57.548" endtime="20220908 10:56:57.636"/>
+</iter>
+<iter>
+<var name="${I}">3</var>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>DOWN</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:57.725" level="INFO">[log]  TYPE "#DOWN."</msg>
+<status status="PASS" starttime="20220908 10:56:57.637" endtime="20220908 10:56:57.725"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:57.636" endtime="20220908 10:56:57.725"/>
+</iter>
+<iter>
+<var name="${I}">4</var>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>DOWN</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:57.814" level="INFO">[log]  TYPE "#DOWN."</msg>
+<status status="PASS" starttime="20220908 10:56:57.725" endtime="20220908 10:56:57.814"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:57.725" endtime="20220908 10:56:57.814"/>
+</iter>
+<status status="PASS" starttime="20220908 10:56:56.368" endtime="20220908 10:56:57.814"/>
+</for>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:57.904" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20220908 10:56:57.815" endtime="20220908 10:56:57.904"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>TAB</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:57.998" level="INFO">[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20220908 10:56:57.904" endtime="20220908 10:56:57.998"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>GERANDO DADOS</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20220908 10:56:59.177" level="INFO">Input Text:
+GERANDO DADOS
+[log]  TYPE "GERANDO DADOS"</msg>
+<status status="PASS" starttime="20220908 10:56:57.998" endtime="20220908 10:56:59.177"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:59.266" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20220908 10:56:59.177" endtime="20220908 10:56:59.266"/>
+</kw>
+<kw name="Name" library="FakerLibrary">
+<var>${NOME_PURO}</var>
+<doc>:example 'John Doe'</doc>
+<msg timestamp="20220908 10:56:59.267" level="INFO">${NOME_PURO} = Matheus Barbosa</msg>
+<status status="PASS" starttime="20220908 10:56:59.266" endtime="20220908 10:56:59.267"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME}</var>
+<arg>${NOME_PURO}</arg>
+<arg>á</arg>
+<arg>${EMPTY}</arg>
+<arg>count=+1</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220908 10:56:59.268" level="INFO">${NOME} = Matheus Barbosa</msg>
+<status status="PASS" starttime="20220908 10:56:59.267" endtime="20220908 10:56:59.268"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME}</var>
+<arg>${NOME_PURO}</arg>
+<arg>á</arg>
+<arg>${EMPTY}</arg>
+<arg>count=+1</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220908 10:56:59.269" level="INFO">${NOME} = Matheus Barbosa</msg>
+<status status="PASS" starttime="20220908 10:56:59.268" endtime="20220908 10:56:59.269"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME}</var>
+<arg>${NOME_PURO}</arg>
+<arg>ú</arg>
+<arg>${EMPTY}</arg>
+<arg>count=+1</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220908 10:56:59.270" level="INFO">${NOME} = Matheus Barbosa</msg>
+<status status="PASS" starttime="20220908 10:56:59.269" endtime="20220908 10:56:59.270"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME}</var>
+<arg>${NOME_PURO}</arg>
+<arg>ã</arg>
+<arg>${EMPTY}</arg>
+<arg>count=+1</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220908 10:56:59.271" level="INFO">${NOME} = Matheus Barbosa</msg>
+<status status="PASS" starttime="20220908 10:56:59.270" endtime="20220908 10:56:59.271"/>
+</kw>
+<kw name="Street Name" library="FakerLibrary">
+<var>${RUA_PURO}</var>
+<doc>:example: 'Crist Parks'</doc>
+<msg timestamp="20220908 10:56:59.272" level="INFO">${RUA_PURO} = Parque Calebe Nascimento</msg>
+<status status="PASS" starttime="20220908 10:56:59.271" endtime="20220908 10:56:59.272"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${RUA}</var>
+<arg>${RUA_PURO}</arg>
+<arg>á</arg>
+<arg>${EMPTY}</arg>
+<arg>count=+1</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220908 10:56:59.273" level="INFO">${RUA} = Parque Calebe Nascimento</msg>
+<status status="PASS" starttime="20220908 10:56:59.272" endtime="20220908 10:56:59.273"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${RUA}</var>
+<arg>${RUA_PURO}</arg>
+<arg>Á</arg>
+<arg>${EMPTY}</arg>
+<arg>count=+1</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220908 10:56:59.274" level="INFO">${RUA} = Parque Calebe Nascimento</msg>
+<status status="PASS" starttime="20220908 10:56:59.273" endtime="20220908 10:56:59.274"/>
+</kw>
+<kw name="Paste Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>Nome: ${NOME} CPF: ${CPF} CPNJ: ${CNPJ}</arg>
+<doc>Paste text. Image could be empty</doc>
+<msg timestamp="20220908 10:56:59.360" level="INFO">Paste Text:
+Nome: Matheus Barbosa CPF: 539.718.206-03 CPNJ: 58.329.407/0001-47</msg>
+<status status="PASS" starttime="20220908 10:56:59.274" endtime="20220908 10:56:59.360"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:59.451" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20220908 10:56:59.360" endtime="20220908 10:56:59.451"/>
+</kw>
+<kw name="Paste Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>Rua: ${RUA} BAIRRO: ${BAIRRO} Telefone: ${TEL}</arg>
+<doc>Paste text. Image could be empty</doc>
+<msg timestamp="20220908 10:56:59.505" level="INFO">Paste Text:
+Rua: Parque Calebe Nascimento BAIRRO: Piratininga Telefone: 0900 281 5990</msg>
+<status status="PASS" starttime="20220908 10:56:59.451" endtime="20220908 10:56:59.505"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:59.594" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20220908 10:56:59.505" endtime="20220908 10:56:59.594"/>
+</kw>
+<kw name="Paste Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>Email: ${EMAIL} Placa: ${PLACA} Cor: ${COR}</arg>
+<doc>Paste text. Image could be empty</doc>
+<msg timestamp="20220908 10:56:59.648" level="INFO">Paste Text:
+Email: felipe99@example.org Placa: TYZ-8R08 Cor: laranja</msg>
+<status status="PASS" starttime="20220908 10:56:59.594" endtime="20220908 10:56:59.648"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20220908 10:56:59.737" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20220908 10:56:59.648" endtime="20220908 10:56:59.737"/>
+</kw>
+<kw name="Paste Text" library="SikuliLibrary">
+<arg>${EMPTY}</arg>
+<arg>Trabalho: ${JOB} Uma frase: ${FRASE}</arg>
+<doc>Paste text. Image could be empty</doc>
+<msg timestamp="20220908 10:56:59.792" level="INFO">Paste Text:
+Trabalho: Designer gráfico Uma frase: O prazer de ganhar com confiança</msg>
+<status status="PASS" starttime="20220908 10:56:59.737" endtime="20220908 10:56:59.792"/>
+</kw>
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220908 10:57:00.003" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1662645419873.png'/&gt;</msg>
+<status status="PASS" starttime="20220908 10:56:59.792" endtime="20220908 10:57:00.003"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:55.900" endtime="20220908 10:57:00.003"/>
+</kw>
+<kw name="Então finalizo o aplicativo">
+<kw name="Set Library Search Order" library="BuiltIn">
+<arg>SikuliLibrary</arg>
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<status status="PASS" starttime="20220908 10:57:00.010" endtime="20220908 10:57:00.010"/>
+</kw>
+<kw name="Press Combination" library="ImageHorizonLibrary">
+<arg>KEY.ALT</arg>
+<arg>Key.F4</arg>
+<doc>Press given keyboard keys.</doc>
+<status status="PASS" starttime="20220908 10:57:00.010" endtime="20220908 10:57:00.113"/>
+</kw>
+<status status="PASS" starttime="20220908 10:57:00.010" endtime="20220908 10:57:00.113"/>
+</kw>
+<status status="PASS" starttime="20220908 10:56:54.196" endtime="20220908 10:57:00.114"/>
+</test>
+<kw name="Stop Remote Server" library="SikuliLibrary" type="TEARDOWN">
+<doc>Stops the remote server.</doc>
+<msg timestamp="20220908 10:57:00.123" level="INFO">Robot Framework remote server stopping</msg>
+<status status="PASS" starttime="20220908 10:57:00.116" endtime="20220908 10:57:00.123"/>
+</kw>
+<doc>Automação de testes RobotFramework de exemplo utilizando cálculadora e bloco de notas com as libraries do Sikuli, Faker e ImageHorizonLibrary</doc>
+<status status="PASS" starttime="20220908 10:56:38.680" endtime="20220908 10:57:00.124"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="RobotAuto">RobotAuto</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
